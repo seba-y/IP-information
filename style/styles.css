@@ -1,0 +1,66 @@
+.title-navbar { 
+    margin-left: 2%;
+}
+
+body {  background: linear-gradient(to right, #093028, #237a57);}
+
+main{ display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;}
+
+.contenedor-ip {width: 550px; 
+                border-radius: 15px;}
+
+label{  width: 100%;    
+    }
+button{width: 100%;}
+
+
+form{ background-color: azure;
+    border-radius: 15px;
+
+    padding: 50px;
+    }
+
+#results{
+    display: none;
+    background-color: azure;
+    border-radius: 15px;
+    padding: 1%;
+    border-top: 1px solid #237a57;
+
+}
+
+input:focus{
+  
+
+}
+#input:focus { 
+     box-shadow: 0px 0px 8px 2px #237a57;
+     border-color: #237a57;
+}
+
+@media (max-width: 550px) {
+    form { padding: 3% 1%;
+           }
+    
+    .contenedor-ip { width: 100%}
+}
+@media (max-width:350px){
+    form{ text-align: center;}
+}
+
+footer { 
+    background-color: #237a57;
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    bottom: 0;
+    opacity: .3;
+
+}
+
+footer p { 
+    text-align: center;
+}
