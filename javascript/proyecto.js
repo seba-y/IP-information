@@ -4,6 +4,7 @@ const $form = $("#form");
 const $input = $("#input");
 const $submitt = $("#submit");
 const $results = $("#results");
+const $footer = $('footer')
 
 
 const OPTIONS = {
@@ -27,28 +28,29 @@ const fetchInfo = ip => {
 
 
 $form.addEventListener("submit", async (event)=>{
-    $submitt.setAttribute("disabled","")
-    $submitt.setAttribute("aria-hidden","true")
-    $submitt.setAttribute("spinner-border","")
-    $submitt.setAttribute("spinner-border-sm","")
-    $submitt.setAttribute("visually-hidden","")
+    $submitt.setAttribute("disabled","");
+    $submitt.setAttribute("aria-hidden","true");
+    $submitt.setAttribute("spinner-border","");
+    $submitt.setAttribute("spinner-border-sm","");
+    $submitt.setAttribute("visually-hidden","");
 
-    event.preventDefault()
+    event.preventDefault();
 
     const {value} = $input ; 
-    if(!value) return
+    if(!value) return ;
 
-    const ipvalue = await fetchInfo(value)
+    const ipvalue = await fetchInfo(value);
     if(ipvalue) {
         $results.innerHTML = JSON.stringify(ipvalue,null, 4 ) 
-        console.log(ipvalue)
-        $results.style.display="block"
+        console.log(ipvalue);
+        $results.removeAttribute('hidden');
+        $footer.style.position='relative';
     }
     
-    $submitt.removeAttribute("spinner-border")
-    $submitt.removeAttribute("spinner-border-sm")
-    $submitt.removeAttribute("disabled")
-    $submitt.removeAttribute("aria-hidden")
+    $submitt.removeAttribute("spinner-border");
+    $submitt.removeAttribute("spinner-border-sm");
+    $submitt.removeAttribute("disabled");
+    $submitt.removeAttribute("aria-hidden");
 
 },{bubbles:false})
 

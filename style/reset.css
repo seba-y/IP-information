@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100dvh;
+    background: linear-gradient(to right, #093028, #237a57);
+    position: relative;
+}
+
+h1, h2, h3, h4, h5 { text-wrap: balance; }
+
+a { text-decoration: none; }
+
+img {  height: auto; max-width: 100%; }
+
+@media (prefers-reduced-motion:reduce){
+    *, *::before, *::after{
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+        transition-duration: 0.01ms;
+        scroll-behavior: smooth;
+        transition: none;
+    }
+}
